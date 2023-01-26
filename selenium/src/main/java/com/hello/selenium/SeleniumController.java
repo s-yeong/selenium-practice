@@ -44,10 +44,7 @@ public class SeleniumController {
         // 데이터 가져오기
         WebElement element = driver.findElement(By.xpath("//*[@id=\"mArticle\"]/div[1]/div[2]/div[2]/div/div/ul"));
         List<WebElement> txt_operation = element.findElements(By.className("txt_operation"));
-        for (WebElement webElement : txt_operation) {
-            list.add(webElement.getText());
-        }
-
+        txt_operation.forEach(webElement -> list.add(webElement.getText()));
         return list;
     }
 }
